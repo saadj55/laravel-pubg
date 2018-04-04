@@ -19,7 +19,7 @@ After that, run the following command to publish configuration file.
 php artisan vendor:publish
 ```
 
-##Usage
+## Usage
 
 You can simple use the API by adding ```use Saadj55\LaravelPubg\Pubg;``` wherever you want to call the API
 and making a new instance of the ```Pubg``` class as ```$pubg = new Pubg;```
