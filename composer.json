@@ -8,7 +8,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Saadj55\\": "src/"
+            "Saadj55\\LaravelPubg\\": "src/"
         }
     },
     "minimum-stability": "stable"
