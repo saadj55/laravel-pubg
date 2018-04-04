@@ -21,7 +21,7 @@ php artisan vendor:publish
 
 Set your access token in the ```.env``` file as ```PUBG_ACCESS_TOKEN=<access_token>```
 
-You can also set ```PUBG_REGION=<region>``` in the ```.env``` file
+Set the region you want to query as ```PUBG_REGION=<region>``` in the ```.env``` file
 
 ## Usage
 
