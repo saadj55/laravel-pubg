@@ -19,6 +19,8 @@ After that, run the following command to publish configuration file.
 php artisan vendor:publish
 ```
 
+Set your access token in the ```.env``` file as ```PUBG_ACCESS_TOKEN=<access_token>```
+
 ## Usage
 
 You can simple use the API by adding ```use Saadj55\LaravelPubg\Pubg;``` wherever you want to call the API
