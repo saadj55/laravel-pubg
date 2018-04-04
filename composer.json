@@ -1,0 +1,7 @@
+{
+    "name": "saadj55/laravel-pubg",
+    "description": "Laravel Package for Official PUBG API",
+    "type": "library",
+    "license": "MIT",
+    "require": {}
+}
