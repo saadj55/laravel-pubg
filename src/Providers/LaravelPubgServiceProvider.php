@@ -10,7 +10,7 @@ class LaravelPubgServiceProvider extends ServiceProvider {
     public function boot()
     {
         $this->publishes([
-            '../../config/config.php' => config_path('pubg.php'),
+            __DIR__.'/../../config/config.php' => config_path('pubg.php'),
         ]);
     }
 
