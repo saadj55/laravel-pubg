@@ -14,7 +14,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Saadj55\\LaravelPubg\\Providers\\ServiceProvider"
+                "Saadj55\\LaravelPubg\\Providers\\LaravelPubgServiceProvider"
             ]
         }
     },
