@@ -23,6 +23,6 @@ Set your access token in the ```.env``` file as ```PUBG_ACCESS_TOKEN=<access_tok
 
 ## Usage
 
-You can simple use the API by adding ```use Saadj55\LaravelPubg\Pubg;``` wherever you want to call the API
+You can simply use the API by adding ```use Saadj55\LaravelPubg\Pubg;``` wherever you want to call the API
 and making a new instance of the ```Pubg``` class as ```$pubg = new Pubg;```
 
