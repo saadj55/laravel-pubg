@@ -11,5 +11,12 @@
             "Saadj55\\LaravelPubg\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Saadj55\\LaravelPubg\\Providers\\ServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "stable"
 }
