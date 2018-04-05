@@ -28,3 +28,66 @@ Set the region you want to query as ```PUBG_REGION=<region>``` in the ```.env```
 You can simply use the API by adding ```use Saadj55\LaravelPubg\Pubg;``` wherever you want to call the API
 and making a new instance of the ```Pubg``` class as ```$pubg = new Pubg;```
 
+## API
+
+### getPlayerById
+
+```shell
+$pubg = new Pubg;
+$player = $pubg->getPlayerById($player_id);
+```
+
+### getPlayersByIds
+
+```shell
+$pubg = new Pubg;
+$player_ids = [1,2,3,4,5];
+$player = $pubg->getPlayersByIds($player_ids);
+```
+
+### getPlayersByNames
+
+```shell
+$pubg = new Pubg;
+$player_names = ['foo','bar'];
+$player = $pubg->getPlayersByName($player_names);
+```
+
+### getPlayersByNames
+
+```shell
+$pubg = new Pubg;
+$player_names = ['foo','bar'];
+$player = $pubg->getPlayersByName($player_names);
+```
+
+### getMatchById
+
+```shell
+$pubg = new Pubg;
+$match = $pubg->getMatchById($match_id);
+```
+By default, region name is set from the ```app/config/pubg.php```. 
+If you need to set the region on the fly, You can call ```$pubg->setRegion($region_name)``` before calling any
+of the about methods.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

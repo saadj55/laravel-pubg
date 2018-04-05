@@ -46,7 +46,7 @@ class Pubg {
 
         return $this->request($params);
     }
-    public function getPlayerByIds($player_ids){
+    public function getPlayersByIds($player_ids){
         $player_ids_csv = implode(',', $player_ids);
         $params = [
             'entity'=>'players',
