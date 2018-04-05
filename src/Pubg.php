@@ -31,7 +31,7 @@ class Pubg {
         }else{
             $url = $this->api_url . $this->region . '/' . $params['entity'];
         }
-        $this->dispatchCurlRequest($url);
+        return $this->dispatchCurlRequest($url);
     }
     public function dispatchCurlRequest($url, $params = null){
         $request = curl_init();
