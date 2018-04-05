@@ -3,7 +3,7 @@
 namespace Saadj55\LaravelPubg\Exceptions;
 
 
-class AccessTokenNotFoundException extends \Exception{
+class PubgException extends \Exception{
 
     protected $statusCode = 500;
 
