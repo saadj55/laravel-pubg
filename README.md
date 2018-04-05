@@ -61,7 +61,7 @@ $match = $pubg->getMatchById($match_id);
 ```
 By default, region name is set from the ```app/config/pubg.php```. 
 If you need to set the region on the fly, You can call ```$pubg->setRegion($region_name)``` before calling any
-of the about methods.
+of the above methods.
 
 
 
