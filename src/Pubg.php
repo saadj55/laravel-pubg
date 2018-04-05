@@ -19,7 +19,7 @@ class Pubg {
             throw new PubgException('Access token not found. Please set Access Token in the .env');
         }
         if(!isset($this->region) || empty($this->region)){
-            throw new PubgException('Region token not found. Please set Region in the .env');
+            throw new PubgException('Region not found. Please set Region in the .env');
         }
         if(isset($params['filters'])){
             $url = $this->api_url . $this->region . '/' . $params['entity'] . '?filter';
