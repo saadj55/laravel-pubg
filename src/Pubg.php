@@ -50,7 +50,7 @@ class Pubg {
 
         $player_names_csv = implode(',', $player_names);
         $params = [
-            'entity'=>'players',
+            'entity'=>$this::PLAYER_ENT,
             'filters'=>[
                 'playerNames' =>$player_names_csv,
             ],
@@ -71,7 +71,7 @@ class Pubg {
     }
     public function getPlayerById($player_id){
         $params = [
-            'entity'=>'players',
+            'entity'=>$this::PLAYER_ENT,
             'id'=>$player_id,
         ];
         return $this->request($params);
