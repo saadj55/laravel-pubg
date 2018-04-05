@@ -31,6 +31,9 @@ class Pubg {
         }else{
             $url = $this->api_url . $this->region . '/' . $params['entity'];
         }
+        $this->dispatchCurlRequest($url);
+    }
+    public function dispatchCurlRequest($url, $params = null){
         $request = curl_init();
         curl_setopt($request, CURLOPT_URL, $url);
         curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
@@ -41,7 +44,7 @@ class Pubg {
     public function setRegion($region = null){
         $this->region = $region == null ? config('pubg.region') : $region;
     }
-    public function getPlayersByName($player_names){
+    public function getPlayersByName(array $player_names){
 
         $player_names_csv = implode(',', $player_names);
         $params = [
@@ -53,7 +56,8 @@ class Pubg {
 
         return $this->request($params);
     }
-    public function getPlayersByIds($player_ids){
+    public function getPlayersByIds(array $player_ids){
+
         $player_ids_csv = implode(',', $player_ids);
         $params = [
             'entity'=>'players',
@@ -77,8 +81,8 @@ class Pubg {
         ];
         return $this->request($params);
     }
-    //TODO
     public function getStatus(){
-
+        $url = 'https://api.playbattlegrounds.com/status';
+        return $this->dispatchCurlRequest($url);
     }
 }
