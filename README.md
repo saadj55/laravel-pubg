@@ -53,14 +53,6 @@ $player_names = ['foo','bar'];
 $player = $pubg->getPlayersByName($player_names);
 ```
 
-### getPlayersByNames
-
-```shell
-$pubg = new Pubg;
-$player_names = ['foo','bar'];
-$player = $pubg->getPlayersByName($player_names);
-```
-
 ### getMatchById
 
 ```shell
