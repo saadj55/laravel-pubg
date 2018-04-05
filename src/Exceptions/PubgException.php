@@ -2,7 +2,7 @@
 /**
  *  Laravel Package for PUBG API
  *
- *  Documentation : https://github.com/Wobow/saadj55/laravel-pubg
+ *  Documentation : https://github.com/saadj55/laravel-pubg
  *
  *  Read the README, and the contributing guidelines to contribute to this project.
  *
