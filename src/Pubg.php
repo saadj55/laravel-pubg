@@ -7,6 +7,8 @@ class Pubg {
     protected $access_token;
     protected $api_url;
     protected $region;
+    const PLAYER_ENT = 'players';
+    const MATCH_ENT = 'matches';
 
     public function __construct()
     {
@@ -60,7 +62,7 @@ class Pubg {
 
         $player_ids_csv = implode(',', $player_ids);
         $params = [
-            'entity'=>'players',
+            'entity'=>$this::PLAYER_ENT,
             'filters'=>[
                 'playerIds' =>$player_ids_csv,
             ],
@@ -76,7 +78,7 @@ class Pubg {
     }
     public function getMatchById($match_id){
         $params = [
-            'entity'=>'matches',
+            'entity'=>$this::MATCH_ENT,
             'id'=>$match_id
         ];
         return $this->request($params);
