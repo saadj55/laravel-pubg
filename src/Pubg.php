@@ -1,5 +1,7 @@
 <?php
 namespace Saadj55\LaravelPubg;
+use Saadj55\LaravelPubg\Exceptions\AccessTokenNotFoundException;
+
 class Pubg {
 
     protected $access_token;
@@ -13,6 +15,9 @@ class Pubg {
         $this->setRegion();
     }
     public function request($params){
+        if(!isset($this->access_token) || empty($this->access_token)){
+            throw new AccessTokenNotFoundException('Access token not found. Please set Access Token in the .env');
+        }
         if(isset($params['filters'])){
             $url = $this->api_url . $this->region . '/' . $params['entity'] . '?filter';
             foreach ($params['filters'] as $key => $value){
