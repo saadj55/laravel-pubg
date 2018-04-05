@@ -5,7 +5,6 @@ class Pubg {
     protected $access_token;
     protected $api_url;
     protected $region;
-    protected $endpoint;
 
     public function __construct()
     {
@@ -70,6 +69,7 @@ class Pubg {
         ];
         return $this->request($params);
     }
+    //TODO
     public function getStatus(){
 
     }
