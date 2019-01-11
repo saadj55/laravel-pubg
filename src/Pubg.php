@@ -16,6 +16,7 @@ class Pubg {
     protected $access_token;
     protected $api_url;
     protected $region;
+    protected $platform;
     const PLAYER_ENT = 'players';
     const MATCH_ENT = 'matches';
 
@@ -24,6 +25,7 @@ class Pubg {
         $this->access_token = config('pubg.access_token');
         $this->api_url = config('pubg.api_url');
         $this->setRegion();
+        $this->setPlatform();
     }
     public function request($params){
         if(!isset($this->access_token) || empty($this->access_token)){
@@ -32,13 +34,18 @@ class Pubg {
         if(!isset($this->region) || empty($this->region)){
             throw new PubgException('Region not found. Please set Region in the .env');
         }
+        if(!isset($this->platform) || empty($this->platform)){
+            throw new PubgException('Platform not found. Please set Platform in the .env');
+        }
         if(isset($params['filters'])){
             $url = $this->api_url . $this->region . '/' . $params['entity'] . '?filter';
             foreach ($params['filters'] as $key => $value){
                 $url .= '[' .$key. ']='.$value;
             }
-        }elseif(isset($params['id'])){
+        }elseif(isset($params['id'])) {
             $url = $this->api_url . $this->region . '/' . $params['entity'] . '/' . $params['id'];
+        }elseif(isset($params['entity']) && ($params['entity'] == self::PLAYER_ENT)){
+            $url = $this->api_url . $this->platform . '/' . $params['entity'];
         }else{
             $url = $this->api_url . $this->region . '/' . $params['entity'];
         }
@@ -51,6 +58,10 @@ class Pubg {
         curl_setopt($request, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $this->access_token, 'Accept: application/vnd.api+json'));
         $response = curl_exec($request);
         return json_decode($response);
+    }
+
+    public function setPlatform($platform = null){
+        $this->platform = $platform == null ? config('pubg.platform') : $platform;
     }
     public function setRegion($region = null){
         $this->region = $region == null ? config('pubg.region') : $region;
@@ -93,7 +104,7 @@ class Pubg {
         return $this->request($params);
     }
     public function getStatus(){
-        $url = 'https://api.playbattlegrounds.com/status';
+        $url = 'https://api.pubg.com/status';
         return $this->dispatchCurlRequest($url);
     }
 }
