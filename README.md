@@ -25,7 +25,9 @@ php artisan vendor:publish
 
 Set your access token in the ```.env``` file as ```PUBG_ACCESS_TOKEN=<access_token>```
 
-Set the region you want to query as ```PUBG_REGION=<region>``` in the ```.env``` file
+Set the region you want to query as ```PUBG_REGION=<region>``` in the ```.env``` file.
+
+Set the platform you want to query as ```PUBG_PLATFORM=<platform>``` in the ```.env``` file
 
 ## Usage
 
@@ -66,6 +68,7 @@ $match = $pubg->getMatchById($match_id);
 By default, region name is set from the ```app/config/pubg.php```. 
 If you need to set the region on the fly, You can call ```$pubg->setRegion($region_name)``` before calling any
 of the above methods.
+You can also call ```$pubg->setPlatform($platform)```
 
 
 
